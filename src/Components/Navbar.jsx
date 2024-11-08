@@ -3,12 +3,12 @@ import { NavLink } from "react-router-dom";
 const Navbar = () => {
     const links =
         <>
-            <NavLink to='/'>Home</NavLink>
-            <NavLink to='/coffees'>Coffees</NavLink>
-            <NavLink to='/dashboard'>Dashboard</NavLink>
+            <NavLink className={({ isActive }) => ` hover:text-warning ${isActive ? 'text-warning' : ' text-black'}`} to='/'>Home</NavLink>
+            <NavLink className={({ isActive }) => ` hover:text-warning ${isActive ? 'text-warning' : ' text-black'}`} to='/coffees'>Coffees</NavLink>
+            <NavLink className={({ isActive }) => ` hover:text-warning ${isActive ? 'text-warning' : ' text-black'}`} to='/dashboard'>Dashboard</NavLink>
         </>
     return (
-        <div className="navbar bg-base-100 w-11/12 mx-auto py-5">
+        <div className="navbar z-50 sticky top-0  w-11/12 mx-auto backdrop:blur-xl bg-white/30  py-5">
             <div className="md:navbar-start">
                 <div className="dropdown">
                     <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">

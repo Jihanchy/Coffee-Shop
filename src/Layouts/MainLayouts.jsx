@@ -6,7 +6,7 @@ const MainLayouts = () => {
     return (
         <div>
             {/* navbar */}
-            <Navbar />
+                <Navbar />
             {/* dynamic section */}
             <div className="w-10/12 mx-auto py-5">
                 <Outlet />
