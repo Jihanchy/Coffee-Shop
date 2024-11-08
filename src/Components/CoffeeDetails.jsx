@@ -1,17 +1,22 @@
 import { useEffect, useState } from "react";
 import { useLoaderData, useParams } from "react-router-dom";
 import detailImg from '../assets/nutrition.png'
+import { addToCart } from "../Utilities";
 const CoffeeDetails = () => {
     const { idx } = useParams()
     const data = useLoaderData()
     const [coffee, setCoffee] = useState({})
     useEffect(() => {
-        const details = [...data].find(coffee => coffee.id === parseInt(idx))
+        const details = [...data].find(coffe => coffe.id === parseInt(idx))
         setCoffee(details)
 
     }, [data, idx])
-    const { image, name, category, origin,ingredients,nutrition_info,making_process, type, rating, popularity, description } = coffee || {}
 
+    
+    const {id, image, name, category, origin,ingredients,nutrition_info,making_process, type, rating, popularity, description } = coffee || {}
+    const handleAddToFavorite = (coffee) => {
+        addToCart(coffee)
+    }
     return (
         <div className="my-12">
             {/* description */}
@@ -26,7 +31,7 @@ const CoffeeDetails = () => {
                     <p>Rating : {rating}</p>
                 </div>
                 <div>
-                    <button className="btn btn-warning">Add favorite</button>
+                    <button onClick={()=>handleAddToFavorite(coffee)} className="btn btn-warning">Add favorite</button>
                 </div>
             </div>
             <div className="my-6">
