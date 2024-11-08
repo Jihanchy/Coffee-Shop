@@ -4,7 +4,7 @@ const Card = ({ coffee }) => {
     const { id, image, name, category, origin, type, rating, popularity } = coffee || {}
     return (
         <div className="flex relative">
-            <Link to={`/coffee/${id}`}
+            <Link to={`/coffeeDetails/${id}`}
             className="transition hover:scale-105 shadow-xl rounded-2xl overflow-hidden"
             >
                 <figure className="w-full h-48 overflow-hidden">
